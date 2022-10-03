@@ -13,34 +13,37 @@
     <nav class="z-20 w-screen h-20 bg-white/50 fixed top-0 left-0 flex md:items-center justify-around">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
             <a href="#" class="flex items-center">
-                <img src="./img/saofl.png" class="mx-3 h-24 sm:h-10" />
-                <img src="./img/ataturk.png" class="h-24 sm:h-10" />
+                <img src="./img/saofl.png" class="mx-3 h-16" />
+                <img src="./img/ataturk.png" class="h-16" />
                 
             </a>
             <button data-collapse-toggle="mobile-menu" onclick="toggleNavbar()" type="button" class="inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500" aria-controls="mobile-menu-2" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
             <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
             </button>
-            <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-            <ul class="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
-                <li>
-                <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 text-2xl">Home</a>
-                </li>
-                <li>
-                <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 text-2xl">Services</a>
-                </li>
-                <li>
-                <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 text-2xl">Pricing</a>
-                </li>
-                <li>
-                <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 text-2xl">Contact</a>
-                </li>
-            </ul>
+            <div class="fixed top-20 left-0 md:top-0 md:relative" id="mobile-menu">
+                <ul class="flex flex-col pt-2 md:flex-row">
+                    <li class="w-screen md:w-auto bg-white/50 md:bg-transparent md:mr-4 py-3 px-2 border-b-2 border-gray-400 md:border-none">
+                        <a href="#" class="text-xl transition-colors duration-300 hover:text-orange-600 md:border-b-black md:border-b-2" alt="">Home</a>
+                    </li>
+                    <li class="w-screen md:w-auto bg-white/50 md:bg-transparent md:mr-4 py-3 px-2 border-b-2 border-gray-400 md:border-none">
+                        <a href="#" class="text-xl transition-colors duration-300 hover:text-orange-600 hover:border-b-orange-400 border-b-transparent border-b-2" alt="">About Us</a>
+                    </li>
+                    <li class="w-screen md:w-auto bg-white/50 md:bg-transparent md:mr-4 py-3 px-2 border-b-2 border-gray-400 md:border-none">
+                        <a href="#" class="text-xl transition-colors duration-300 hover:text-orange-600 hover:border-b-orange-400 border-b-transparent border-b-2" alt="">Conference Details</a>
+                    </li>
+                    <li class="w-screen md:w-auto bg-white/50 md:bg-transparent md:mr-4 py-3 px-2">
+                        <a href="#" class="text-xl transition-colors duration-300 hover:text-orange-600 hover:border-b-orange-400 border-b-transparent border-b-2" alt="">Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
         </nav>
     
         <script>
+            if (document.documentElement.clientWidth < 768) {
+                document.getElementById('mobile-menu').classList.add('hidden')
+            }
             const toggleNavbar= () => {
                 document.getElementById('mobile-menu').classList.toggle('hidden')
             }
